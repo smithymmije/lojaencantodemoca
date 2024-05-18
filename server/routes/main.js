@@ -3,13 +3,6 @@ const router = express.Router();
 const Post = require('../models/Post');
 
 
-//inicio teste
-
-//fim teste
-
-
-
-
 
 
 /**

@@ -1,18 +1,22 @@
 <div class="author">
-    <h1 class="author__heading">Hi, I am Smith.</h1>
-    <p class="author__body">Web developer and content creator.</p>
+    <h1 class="author__heading">Bem vinda a Loja Encanto de Moça</h1>
+    <p class="author__body">Para você encantar</p>
+</div>
+<div class="hero-container">
+
+<img src="/img/hero-image.webp" alt="person looking out through window" class="hero-image" >
 </div>
 
-<img src="/img/hero-image.webp" alt="person looking out through window" class="hero-image" width="981" height="528">
-
 <section class="articles">
-    <h2 class="articles__heading">Latest Posts</h2>
+    <h2 class="articles__heading">Novidades</h2>
 
     <ul class="article-ul">
         <% data.forEach(post => { %>
-        <li>
+        <li class="gallery">
             <a href="/post/<%= post._id %>">
                 <span><%= post.title %></span>
+                <span><%= post.body %></span>
+                <span><%= post.valor %></span>
                 <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
             </a>
         </li>

@@ -28,12 +28,6 @@ app.use(cookieParser());
 app.use(methodOverride('_method'));
 
 
-//inicio do teste
-
-
-
-//fim do teste
-
 
 
 app.use(express.static('public'));

@@ -56,3 +56,19 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+//Animação da galeria principals
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.intersectionRatio >= 0.5) {  // Mudei de 1 para 0.5 para ser mais permissivo
+            entry.target.classList.add('gallery-off');  // Removi o ponto
+        } else {
+            entry.target.classList.remove('gallery-off');  // Pode ser útil para alternar a classe
+        }
+    });
+}, {
+    threshold: [0, 0.5, 1]
+});
+
+document.querySelectorAll('.gallery').forEach(element => {
+    observer.observe(element);
+});

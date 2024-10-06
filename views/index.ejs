@@ -14,9 +14,17 @@
         <% data.forEach(post => { %>
         <li class="gallery">
             <a href="/post/<%= post._id %>">
+                <span><%= post.image %></span>
+               
                 <span><%= post.title %></span>
                 <span><%= post.body %></span>
-                <span><%= post.valor %></span>
+                <span><%= post.estrelas %></span>
+                <span><%= post.de %></span>
+                <span><%= post.desconto %></span>
+                <span><%= post.por %></span>
+                <span><%= post.vezes_cartao %></span>
+                <span><%= post.tamanhos %></span>
+                <span><%= post.estoque %></span>
                 <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
             </a>
         </li>

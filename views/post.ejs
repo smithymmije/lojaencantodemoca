@@ -1,7 +1,20 @@
-<a href="/dashboard">&larr; Back</a>
+<a href="/dashboard">&larr; Voltar</a>
 <h1><%= data.title %></h1>
 <article class="article">
-    <%= data.body %>
     
+    <%= data.image %>
+    <%= data.body %>
+    <%= data.estrelas %>
+    <%= data.de %>
+    <%= data.desconto %>
+    <%= data.por %>
+    <%= data.vezes_cartao %>
+    <div class="tamanhos"> <h4>Tamanhos</h4>
+    <%= data.tamanhos %>
+    </div>
+    <div class="estoque"><h4>Restam apenas <%= data.estoque %> itens. aproveite!
+    </h4>
+    </div>
+    <img src="/uploads/<%- data.image %>" class="img-fluid sticky-top" style="top: 20px;" alt="<%- data.image %>" loading="lazy">
 </article>
 

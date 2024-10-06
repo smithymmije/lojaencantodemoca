@@ -155,6 +155,8 @@ router.get('/add-post', authMiddleware, async (req, res) => {
 });
 
 
+
+
 /**
  * POST /
  * Admin - Create New Post
@@ -165,7 +167,14 @@ router.post('/add-post', authMiddleware, async (req, res) => {
             const newPost = new Post ({
                 title: req.body.title,
                 body: req.body.body,
-                valor: req.body.valor
+                estrelas: req.body.estrelas,
+                de: req.body.de,
+                desconto: req.body.desconto,
+                por: req.body.por,
+                vezes_cartao: req.body.vezes_cartao,
+                tamanhos: req.body.tamanhos,
+                estoque: req.body.estoque,
+                image: req.body.image
             });
 
             await Post.create(newPost);
@@ -178,6 +187,8 @@ router.post('/add-post', authMiddleware, async (req, res) => {
         console.log(error)
     }
 });
+
+
 
 
 /**

@@ -3,7 +3,7 @@
     <h2>Publicar Novo Item</h2>
 </div>
 
-<form action="/add-post" method="POST">
+<form action="/add-post" method="POST" >
 
     <label for="title"><b>Nome do Item</b></label>
     <input type="text" placeholder="Escreva o nome do item" name="title">
@@ -11,8 +11,30 @@
     <label for="body"><b>Descrição</b></label>
     <textarea name="body" cols="50" rows="10"></textarea>
 
-    <label for="valor"><b>Valor</b></label>
-    <input type="text" placeholder="" name="valor">
+    <label for="estrelas"><b>Estrelas</b></label>
+    <input type="text" placeholder="" name="estrelas">
+
+    <label for="de"><b>De R$</b></label>
+    <input type="text" placeholder="" name="de">
+
+    <label for="desconto"><b>Desconto em %</b></label>
+    <input type="text" placeholder="" name="desconto">
+
+    <label for="por"><b>Por R$</b></label>
+    <input type="text" placeholder="" name="por">
+    
+    <label for="vezes_cartao"><b>Ou em "x" Vezes no Cartão</b></label>
+    <input type="text" placeholder="" name="vezes_cartao">
+
+    <label for="tamanhos"><b>Tamanhos</b></label>
+    <input type="text" placeholder="" name="tamanhos">
+
+    <label for="estoque"><b>Estoque Disponível</b></label>
+    <input type="text" placeholder="" name="estoque">
+
+    <label for="image">Imagem da Receita</label>
+    <input type="file" class="form-control" name="image" accept="image/*">
+    
 
     <input type="submit" value="Add" class="btn">
 </form>

@@ -10,10 +10,38 @@ const PostSchema = new Schema({
         type: String,
         required: true
     },
-    valor: {
+    estrelas: {
         type: String,
         required: true
     },
+    de: {
+        type: String,
+        required: true
+    },
+    desconto: {
+        type: String,
+        required: true
+    },
+    por: {
+        type: String,
+        required: true
+    },
+    vezes_cartao: {
+        type: String,
+        required: true
+    },
+    tamanhos: {
+        type: String,
+        required: true
+    },
+    estoque: {
+        type: String,
+        required: true
+    },
+    image: {
+        type: String,
+        required: 'This field is required.'
+      },
     createdAt: {
         type: Date,
         default: Date.now

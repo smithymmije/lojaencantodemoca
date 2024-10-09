@@ -14,7 +14,7 @@
         <% data.forEach(post => { %>
         <li class="gallery">
             <a href="/post/<%= post._id %>">
-                <span><%= post.image %></span>
+                <span><img src="/uploads/<%- post.image %>" class="img-fluid sticky-top" style="width: 50%; height: auto;" alt="<%- data.image %>" loading="lazy"></span>
                
                 <span><%= post.title %></span>
                 <span><%= post.body %></span>

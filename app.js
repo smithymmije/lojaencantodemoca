@@ -44,6 +44,7 @@ app.use(session({
 app.use(flash());
 app.use(fileUpload());
 
+
 // Variáveis Locais Globais
 app.locals.isActiveRoute = isActiveRoute;
 

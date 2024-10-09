@@ -138,24 +138,30 @@ router.get('/dashboard', authMiddleware, async (req, res) => {
  * Admin - Create New Post
  */
 router.get('/add-post', authMiddleware, async (req, res) => {
+    const infoErrorsObj = req.flash('infoErrors');  // Mensagens de erro
+    const infoSubmitObj = req.flash('infoSubmit');  // Mensagens de sucesso
+
     try {
         const locals = {
             title: "Add Post",
             description: "Simple Blog created with NodeJs, Express & MongoDb."
-    }
+        };
+
+        // Busca os posts existentes, se necessário
         const data = await Post.find();
+
+        // Renderiza a página 'add-post' com as variáveis 'locals', 'infoErrorsObj' e 'infoSubmitObj'
         res.render('admin/add-post', {
             locals,
-            layout: adminLayout
+            layout: adminLayout,
+            infoErrors: infoErrorsObj,    // Passa mensagens de erro para a view
+            infoSubmit: infoSubmitObj     // Passa mensagens de sucesso para a view
         });
 
     } catch (error) {
-        console.log(error)
+        console.log('Error fetching posts:', error);
     }
 });
-
-
-
 
 /**
  * POST /
@@ -163,28 +169,46 @@ router.get('/add-post', authMiddleware, async (req, res) => {
  */
 router.post('/add-post', authMiddleware, async (req, res) => {
     try {
-        try {
-            const newPost = new Post ({
-                title: req.body.title,
-                body: req.body.body,
-                estrelas: req.body.estrelas,
-                de: req.body.de,
-                desconto: req.body.desconto,
-                por: req.body.por,
-                vezes_cartao: req.body.vezes_cartao,
-                tamanhos: req.body.tamanhos,
-                estoque: req.body.estoque,
-                image: req.body.image
-            });
+        let imageUploadFile;
+        let uploadPath;
+        let newImageName;
 
-            await Post.create(newPost);
-            res.redirect('/dashboard');
-        } catch (error) {
-            console.log(error);
-        }       
+        // Verifica se um arquivo foi enviado
+        if (!req.files || Object.keys(req.files).length === 0) {
+            req.flash('infoErrors', 'No files were uploaded.');
+            return res.redirect('/add-post');
+        }
+
+        // Pega o arquivo da requisição
+        imageUploadFile = req.files.image;
+        newImageName = Date.now() + '-' + imageUploadFile.name; // Gera um nome único para a imagem
+        uploadPath = require('path').resolve('./') + '/public/uploads/' + newImageName; // Define o caminho de upload
+
+        // Move o arquivo para a pasta de uploads
+        await imageUploadFile.mv(uploadPath);
+
+        // Cria o novo post com as variáveis que você precisa
+        const newPost = new Post({
+            title: req.body.title, // Preservando sua variável
+            body: req.body.body, // Preservando sua variável
+            estrelas: req.body.estrelas, // Preservando sua variável
+            de: req.body.de, // Preservando sua variável
+            desconto: req.body.desconto, // Preservando sua variável
+            por: req.body.por, // Preservando sua variável
+            vezes_cartao: req.body.vezes_cartao, // Preservando sua variável
+            tamanhos: req.body.tamanhos, // Preservando sua variável
+            estoque: req.body.estoque, // Preservando sua variável
+            image: newImageName // Aqui está a mudança, armazenando o nome da imagem gerada
+        });
+
+        await Post.create(newPost); // Salva o post no banco de dados
+        req.flash('infoSubmit', 'Post created successfully.'); // Mensagem de sucesso
+        res.redirect('/dashboard'); // Redireciona após o sucesso
 
     } catch (error) {
-        console.log(error)
+        console.log('Error creating post:', error);
+        req.flash('infoErrors', 'An error occurred while creating the post.'); // Mensagem de erro
+        res.redirect('/add-post'); // Redireciona em caso de erro
     }
 });
 

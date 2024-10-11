@@ -1,10 +1,10 @@
 <div class="author">
-    <h1 class="author__heading">Bem vinda a Loja Encanto de Moça</h1>
-    <p class="author__body">Para você encantar</p>
+    <h1 class="author__heading"></h1>
+    <p class="author__body"></p>
 </div>
 <div class="hero-container">
 
-<img src="/img/hero-image.webp" alt="person looking out through window" class="hero-image" >
+<img src="/img/slide.png" alt="person looking out through window" class="hero-image" >
 </div>
 
 <section class="articles">
@@ -14,18 +14,21 @@
         <% data.forEach(post => { %>
         <li class="gallery">
             <a href="/post/<%= post._id %>">
-                <span><img src="/uploads/<%- post.image %>" class="img-fluid sticky-top" style="width: 50%; height: auto;" alt="<%- data.image %>" loading="lazy"></span>
-               
-                <span><%= post.title %></span>
-                <span><%= post.body %></span>
-                <span><%= post.estrelas %></span>
-                <span><%= post.de %></span>
-                <span><%= post.desconto %></span>
-                <span><%= post.por %></span>
-                <span><%= post.vezes_cartao %></span>
-                <span><%= post.tamanhos %></span>
-                <span><%= post.estoque %></span>
-                <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+                <span class="image-container">
+                    <img src="/uploads/<%- post.image %>"  alt="<%- post.image %>" loading="lazy">
+                </span>
+                <div class="detalhes">
+                    <span class="title"><%= post.title %></span>
+                    <span><%= post.body %></span>
+                    <span><%= post.estrelas %></span>
+                    <span>De: <%= post.de %></span>
+                    <span>Desconto: <%= post.desconto %></span>
+                    <span>Por: <%= post.por %></span>
+                    <span>Parcelas: <%= post.vezes_cartao %></span>
+                    <span>Tamanhos: <%= post.tamanhos %></span>
+                    <span>Estoque: <%= post.estoque %></span>
+                    <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+                </div>
             </a>
         </li>
         <% }) %>

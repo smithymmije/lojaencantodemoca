@@ -9,6 +9,11 @@
         <li>
             <a href="/post/<%= post._id %>">
                 <span><%= post.title %></span>
+
+                <span class="image-container">
+                    <img src="/uploads/<%- post.image %>"  alt="<%- post.image %>" loading="lazy">
+                </span>
+                
                 <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
             </a>
         </li>

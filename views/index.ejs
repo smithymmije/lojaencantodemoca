@@ -19,15 +19,13 @@
                 </span>
                 <div class="detalhes">
                     <span class="title"><%= post.title %></span>
-                    <span><%= post.body %></span>
-                    <span><%= post.estrelas %></span>
-                    <span>De: <%= post.de %></span>
-                    <span>Desconto: <%= post.desconto %></span>
-                    <span>Por: <%= post.por %></span>
-                    <span>Parcelas: <%= post.vezes_cartao %></span>
+                    <span class="de"><%= post.de %></span>
+                    <span class="off"><%= post.desconto %></span>
+                    <span class="por"><%= post.por %></span>
+                    <span><%= post.vezes_cartao %></span>
                     <span>Tamanhos: <%= post.tamanhos %></span>
                     <span>Estoque: <%= post.estoque %></span>
-                    <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+                    <!--<span class="article-list__date"><%= post.createdAt.toDateString() %></span>-->
                 </div>
             </a>
         </li>

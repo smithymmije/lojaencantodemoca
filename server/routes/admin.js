@@ -191,14 +191,14 @@ router.post('/add-post', authMiddleware, async (req, res) => {
         const newPost = new Post({
             title: req.body.title, // Preservando sua variável
             body: req.body.body, // Preservando sua variável
-            estrelas: req.body.estrelas, // Preservando sua variável
             de: req.body.de, // Preservando sua variável
             desconto: req.body.desconto, // Preservando sua variável
             por: req.body.por, // Preservando sua variável
             vezes_cartao: req.body.vezes_cartao, // Preservando sua variável
             tamanhos: req.body.tamanhos, // Preservando sua variável
             estoque: req.body.estoque, // Preservando sua variável
-            image: newImageName // Aqui está a mudança, armazenando o nome da imagem gerada
+            image: newImageName, // Aqui está a mudança, armazenando o nome da imagem gerada
+            add_carrinho: req.body.add_carrinho
         });
 
         await Post.create(newPost); // Salva o post no banco de dados

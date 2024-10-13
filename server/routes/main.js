@@ -12,8 +12,8 @@ const Post = require('../models/Post');
 router.get('', async (req, res) => {
     try {
         const locals = {
-            title: "NodeJs Blog",
-            description: "Simple Blog created with NodeJs, Express & MongoDb."
+            title: "Loja Encanto de Moça",
+            description: "Loja Encanto de Moça Sendo desenvolvida com NodeJS e MongoDB."
         }
 
          

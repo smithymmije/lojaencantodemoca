@@ -4,7 +4,6 @@
     
     <%= data.image %>
     <%= data.body %>
-    <%= data.estrelas %>
     <%= data.de %>
     <%= data.desconto %>
     <%= data.por %>
@@ -15,8 +14,8 @@
     <div class="estoque"><h4>Restam apenas <%= data.estoque %> itens. aproveite!
     </h4>
     </div>
-    <img src="/uploads/<%- data.image %>" class="img-fluid sticky-top" style="width: 30%; height: auto;" alt="<%- data.image %>" loading="lazy">
+    <img src="/uploads/<%= data.image %>" class="img-fluid sticky-top" style="width: 30%; height: auto;" alt="<%- data.image %>" loading="lazy">
 </article>
 
+<%- data.add_carrinho %>
 
-<div class="ecsp ecsp-SingleProduct-v2 ecsp-SingleProduct-v2-bordered ecsp-SingleProduct-v2-centered ecsp-Product ec-Product-702361082" itemscope itemtype="http://schema.org/Product" data-single-product-id="702361082"><div itemprop="image"></div><div class="ecsp-title" itemprop="name" content="calcinha"></div><div itemtype="http://schema.org/Offer" itemscope itemprop="offers"><div class="ecsp-productBrowser-price ecsp-price" itemprop="price" content="1" data-spw-price-location="button"><div itemprop="priceCurrency" content="BRL"></div></div></div><div customprop="options"></div><div customprop="qty"></div><div customprop="addtobag"></div><div customprop="vatinprice"></div></div><script data-cfasync="false" type="text/javascript" src="https://api-e.lightspeed.app/script.js?109128280&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>

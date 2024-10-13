@@ -223,26 +223,10 @@ img {
     /*flex-direction: column;*/
     flex-direction:row;
     flex-wrap:wrap;
+    
 
     
 }
-
-.gallery {
-    display:flex;
-    display: -webkit-flex;
-    align-items: center;
-    justify-content: center; 
-    flex-direction:column;  
-    width:25vw;
-    height: 65vh;
-    background:;
-    margin:5px;
-    opacity:0;
-    transition:opacity 1s linear;
-    }
-.gallery-off {
-    opacity:1;
-    }
 
 
 
@@ -278,9 +262,9 @@ img {
     transition: filter 0.1s;
 }*/
 
-.article-ul li:not(:last-child) {
-    border-bottom: 1px solid var(--gray-light);
-}
+/*.article-ul li:not(:last-child) {
+    border-bottom: 10px solid var(--gray-light);
+}*/
 
 /*.article-ul li:hover {
     filter: none;
@@ -415,7 +399,7 @@ img {
     justify-content: center; 
     flex-direction:column;  
     width:25vw;
-    height: 65vh;
+    height: 105vh;
     background:;
     margin:5px;
     opacity:0;
@@ -449,28 +433,35 @@ img {
     position: absolute; /* Faz com que os detalhes fiquem sobre a imagem */
     bottom: 0; /* Posiciona os detalhes na parte inferior */
     left: 0;
-    width: 100%; /* Faz com que os detalhes ocupem toda a largura da imagem */
+    width: 25vw; 
+    height: 15vh;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente para melhor contraste */
+    /*background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente para melhor contraste */
     color: #fff; /* Cor do texto branco para melhor legibilidade */
     text-align: left; /* Alinha o texto à esquerda */
     display: flex;
-    justify-content: space-between; /* Espaço entre os blocos */
+    flex-direction: column; /* Alinha os itens verticalmente */
+    justify-content: flex-start; /* Alinha ao topo */
+    line-height: 1; /* Diminui a distância entre as linhas */
+    margin-left:-9px;
+  
 }
 
 .detalhes span {
     display: block;
     margin: 5px 0; /* Adiciona espaçamento entre os elementos de detalhes */
-    font-size: .8rem;
+    font-size: .85rem;
 }
 
-.article-list__date {font-size: .5rem;}
+
 
 .detalhes .title {
     font-weight: bold;
-    font-size: 1.2em; /* Tamanho maior para o título */
+    font-size: 0.85rem; /* Tamanho maior para o título */
 }
 
-
+.de {text-decoration: line-through;}
+.off {font-weight: lighter;}
+.por {font-weight: 900;}
 
 

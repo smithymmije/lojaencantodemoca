@@ -10,10 +10,6 @@ const PostSchema = new Schema({
         type: String,
         required: true
     },
-    estrelas: {
-        type: String,
-        required: true
-    },
     de: {
         type: String,
         required: true
@@ -35,6 +31,10 @@ const PostSchema = new Schema({
         required: true
     },
     estoque: {
+        type: String,
+        required: true
+    },
+    add_carrinho: {
         type: String,
         required: true
     },

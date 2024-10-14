@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --black: #F4C2C2;
+    --black: #C0C0C0;
     --gray: #7e7e7e;
     --gray-light: #e4e4e4;
     --red: #b30000;
@@ -16,6 +16,8 @@ body{
     font-family: 'Poppins', sans-serif;
     color: var(--black);
     font-size: var(--font-size-base);
+    /*background-color: #0A0F19;*/
+    /*background-color: #0F0F0F;*/
     background-color: #0A0F19;
     /*background-image: url(/img/img-noise-361x370.png);*/
     margin: 0;

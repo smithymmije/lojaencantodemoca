@@ -135,6 +135,7 @@ img {
     text-decoration: none;
 }
 
+.header__logo img {width: 50vh;}
 .header__logo:hover {
     text-decoration: underline;
 }
